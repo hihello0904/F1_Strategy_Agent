@@ -1,11 +1,12 @@
 # F1 Strategy Agent 🏎️
 
 An AI-powered Formula 1 race strategy assistant that generates optimal pit stop strategies using natural language processing. Built with Next.js, TypeScript, and OpenAI's GPT models.
+(Runs locally) Vercel Link: https://f1strategyagentaq.vercel.app/
 
 ## Features
 
 ### 🤖 LLM Integration
-- Integrates with OpenAI API (GPT-5-mini) for intelligent strategy generation
+- Integrates with OpenAI API (GPT-4o-mini) for intelligent strategy generation
 - Custom system prompts optimized for F1 strategy output
 - Error handling with retry/backoff for rate limits and network issues
 
