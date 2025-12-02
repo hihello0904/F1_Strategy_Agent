@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="#E10600">
+  <!-- F shape with speed styling -->
+  <path d="M0 40 L0 0 L45 0 C45 0 42 5 40 8 L15 8 L15 16 L38 16 C38 16 35 21 33 24 L15 24 L15 40 Z"/>
+  <!-- 1 shape -->
+  <path d="M50 0 L75 0 L75 40 L60 40 L60 8 L50 8 Z"/>
+  <!-- Speed lines -->
+  <path d="M80 15 L120 15 L120 25 L85 25 Z"/>
+</svg>
