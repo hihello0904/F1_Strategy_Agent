@@ -216,17 +216,23 @@ export default function ResultsDisplay({ result, reportId }: ResultsDisplayProps
             <p className="text-sm text-f1-lightGray">{result.raceProfile.aeroDescription}</p>
           </div>
 
-          {/* Overtaking with Large Red Classification */}
+          {/* Overtaking with Color-Coded Classification */}
           <div className="bg-f1-mediumGray/30 rounded-lg p-4">
             <h4 className="text-sm font-medium text-f1-lightGray mb-2">Overtaking</h4>
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-2xl font-bold text-f1-red uppercase tracking-wide">
-                {result.raceProfile.overtakingChanceSummary.includes('Easy') || result.raceProfile.overtakingChanceSummary.toLowerCase().includes('easy')
-                  ? 'Easy'
-                  : result.raceProfile.overtakingChanceSummary.includes('Hard') || result.raceProfile.overtakingChanceSummary.toLowerCase().includes('hard') || result.raceProfile.overtakingChanceSummary.toLowerCase().includes('difficult')
-                    ? 'Hard'
-                    : 'Moderate'}
-              </span>
+              {(() => {
+                const isEasy = result.raceProfile.overtakingChanceSummary.toLowerCase().includes('easy');
+                const isHard = result.raceProfile.overtakingChanceSummary.toLowerCase().includes('hard') || 
+                               result.raceProfile.overtakingChanceSummary.toLowerCase().includes('difficult');
+                const label = isEasy ? 'Easy' : isHard ? 'Hard' : 'Moderate';
+                const colorClass = isEasy ? 'text-f1-success' : isHard ? 'text-f1-red' : 'text-f1-warning';
+                
+                return (
+                  <span className={`text-2xl font-bold uppercase tracking-wide ${colorClass}`}>
+                    {label}
+                  </span>
+                );
+              })()}
             </div>
             <p className="text-sm text-f1-lightGray">{result.raceProfile.overtakingChanceSummary}</p>
           </div>
